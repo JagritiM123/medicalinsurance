@@ -6,9 +6,12 @@ This model delivers how charges (insurance fee) for individuals have been impact
 * core data validations and filtering is done before starting the proper analysis.
 * for the columns that potentially affect the results of "charges" column are edited (justified in the code)
 * all datapoints are unique, no empty strings
-
-**Observations:**
+**_________________________________________________________________________________________**
+**Tasks**
 * while doing a thorough analysis, the histogram(normal plot) for charges versus the count of individuals comes out to be left skewed (Not Normalized)
 * The datapoints are centralized by applying the log function in order to correctly train the model
 * ensured that the model is trained with the correct "charges" value (by giving antilog)
-* 
+* calculated the proportion of each affecting parameter(age,bmi,smoker) and plotted using a pie chart
+* applied some edits to categorical columns (age,bmi,smoker,sex,charges,children,region) to numerical valued columns for the one's needed for the model training and testing.
+* done the feature scaling using the Z-score normalization.
+* provided a scatter plot for charges_log column versus age, bmi and smoker_yes (person smokes) inorder to check the spread of individual and how sparsed it is.
