@@ -1,17 +1,56 @@
-**Medical Insurance Regression Model**
-This model delivers how charges (insurance fee) for individuals have been impacted by their age, if the person is smoker or not and even their BMI which all over depicts how much each individual contributes.
+# Medical Insurance Charges — Regression Model
 
-**Notes**
-* there are 6 columns and over 1300 datapoints that i have split into train and test data (by 70/30 ratio)
-* core data validations and filtering is done before starting the proper analysis.
-* for the columns that potentially affect the results of "charges" column are edited (justified in the code)
-* all datapoints are unique, no empty strings
-**_________________________________________________________________________________________**
-**Tasks**
-* while doing a thorough analysis, the histogram(normal plot) for charges versus the count of individuals comes out to be left skewed (Not Normalized)
-* The datapoints are centralized by applying the log function in order to correctly train the model
-* ensured that the model is trained with the correct "charges" value (by giving antilog)
-* calculated the proportion of each affecting parameter(age,bmi,smoker) and plotted using a pie chart
-* applied some edits to categorical columns (age,bmi,smoker,sex,charges,children,region) to numerical valued columns for the one's needed for the model training and testing.
-* done the feature scaling using the Z-score normalization.
-* provided a scatter plot for charges_log column versus age, bmi and smoker_yes (person smokes) inorder to check the spread of individual and how sparsed it is.
+## Overview
+A regression model that predicts individual medical insurance charges based on **age**, **BMI**, and **smoking status**, built from scratch using NumPy and Pandas.
+
+---
+
+## Dataset
+- 1,300+ data points, 6 columns
+- Target variable: `charges`
+- Train / test split: 70% / 30%
+- All data points are unique with no missing values
+
+---
+
+## Pipeline
+
+### 1. Data Validation
+- Core filtering and sanity checks applied before analysis
+- Columns affecting `charges` identified and transformed (justifications in code)
+
+### 2. Preprocessing
+- Categorical columns encoded to numerical values
+- Feature scaling applied via **Z-score normalization**
+
+### 3. Skew Correction
+- `charges` histogram showed a right-skewed distribution
+- **Log transformation** applied to normalize it for training
+- Predictions converted back using the **antilog**
+
+---
+
+## Features Used
+
+| Feature | Type |
+|---|---|
+| `age` | Numerical |
+| `bmi` | Numerical |
+| `smoker_yes` | Binary (1 = smoker, 0 = non-smoker) |
+
+---
+
+## Visualizations
+
+| Plot | Purpose |
+|---|---|
+| Histogram | Shows skew in `charges`; motivates log transform |
+| Pie chart | Proportional influence of age, BMI, and smoker status |
+| Scatter plots | `charges_log` vs. `age`, `bmi`, `smoker_yes` — checks data spread |
+
+---
+
+## Tech Stack
+- Python, NumPy, Pandas
+- Matplotlib (visualizations)
+- No scikit-learn — model built from scratch
